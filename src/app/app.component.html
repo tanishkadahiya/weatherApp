@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+
+  <br>
+ 
+    <h1 ><b>{{name}} Weather Forecast</b> 
+      <i class="fa fa-cloud" style="font-size:48px;"></i></h1>
+
+
+<app-textbox>
+ 
+  
+   <input  textb class="w3-input w3-border" type="text" [(ngModel)]='name' >
+
+    <button buttonb (click)='getData()'  class="w3-btn w3-blue" ><b>Go</b></button>
+</app-textbox>
+
+
+
+
+
+<pre><h4>    Day          Image            Min Temp     Max Temp         Humidity</h4></pre>
+ 
+  <table>
+    
+      <tr>
+  <app-display>
+    
+    <td day>Today</td>
+  
+    <td temp>{{cloudData.list[2].main.temp_min}}</td>
+    <td temp>{{cloudData.list[2].main.temp_max}}</td>
+    <td image1><img src="http://openweathermap.org/img/w/{{cloudData.list[2].weather[0].icon}}.png"></td>
+    <td header>{{cloudData.list[2].main.humidity}}</td>
+     
+  </app-display> </tr>
+  <tr>
+      <app-display>
+    
+          <td day>Tomorrow</td>
+          
+          <td temp>{{cloudData.list[9].main.temp_min}}</td>
+          <td temp>{{cloudData.list[9].main.temp_max}}</td>
+          <td image1><img src="http://openweathermap.org/img/w/{{cloudData.list[9].weather[0].icon}}.png"></td>
+    <td header>{{cloudData.list[9].main.humidity}}</td>
+           
+        </app-display>
+  </tr>
+  <tr>
+      <app-display>
+    
+          <td day>After Tomorrow</td>
+         
+          <td temp>{{cloudData.list[17].main.temp_min}}</td>
+          <td temp>{{cloudData.list[17].main.temp_max}}</td>
+          <td image1><img src="http://openweathermap.org/img/w/{{cloudData.list[17].weather[0].icon}}.png"></td>
+    <td header>{{cloudData.list[17].main.humidity}}</td>
+        </app-display>
+  </tr>
+</table>
+</body>
+</html>
+ 
